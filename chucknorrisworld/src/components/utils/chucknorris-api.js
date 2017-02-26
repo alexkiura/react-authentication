@@ -12,4 +12,4 @@ const getCelebrityData = () => {
     return axios.get(url).then(response => response.data);
 }
 
-export {getFoodData, getCelebrityData }
+export { getFoodData, getCelebrityData }
