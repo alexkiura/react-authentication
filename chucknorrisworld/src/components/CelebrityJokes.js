@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import Nav from './Nav';
-import { getCelebrityData } from '../utils/chucknorris-api';
+import { getCelebrityData } from './utils/chucknorris-api';
 
 
 class CelebrityJokes extends Component {
@@ -17,7 +17,7 @@ class CelebrityJokes extends Component {
   }
 
   componentWillMount() {
-    this,getCelebrityJokes();
+    this.getCelebrityJokes();
   }
 
   render() {
@@ -28,7 +28,7 @@ class CelebrityJokes extends Component {
         <Nav />
         <h3 className="text-center">Privileged Chuck Norris celebrity jokes</h3>
         <hr />
-        {jokes.map(joke, index) => (
+        {jokes.map((joke, index) => (
           <div className="col-sm-6" key={index}>
             <div className="panel panel-danger">
               <div className="panel-heading">
@@ -39,7 +39,7 @@ class CelebrityJokes extends Component {
               </div>
             </div>
           </div>
-        )}
+        ))}
         <div className="col-sm-12">
           <div className="jumbotron text-center">
             <h2>View food jokes</h2>
