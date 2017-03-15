@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 import Nav from './Nav';
-import {getFoodData} from '../utils/chucknorris-api';
+import {getFoodData} from './utils/chucknorris-api';
 
 class FoodJokes extends Component {
   constructor() {
@@ -27,7 +27,8 @@ class FoodJokes extends Component {
       <div>
         <Nav/>
         <h3 className="text-center">Chuck Norris food jokes</h3>
-        <hr/> {jokes.map((joke, index) => (
+        <hr/> 
+        {jokes.map((joke, index) => (
           <div className="col-sm-6" key={index}>
             <div className="panel panel-primary">
               <div className="panel-heading">
@@ -39,7 +40,22 @@ class FoodJokes extends Component {
             </div>
           </div>
         ))}
+
+        <div className="col-sm-12">
+          <div className="jumbotron text-center">
+            <h2>Get access to celebrity jokes by logging in</h2>
+          </div>
+        </div>
+
+        <div className="col-sm-12">
+          <div className="jumbotron text-center">
+            <h2>View Celebrity Jokes</h2>
+            <Link className="btn btn-lg btn-success" to="/special">Celebrity jokes</Link>
+          </div>
+        </div>
       </div>
     )
   }
 }
+
+export default FoodJokes;
